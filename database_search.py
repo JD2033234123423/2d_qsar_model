@@ -6,7 +6,8 @@ from pandas import DataFrame
 
 
 def search_query(user_search:str=None, chembl_id_search:str=None, save_prefix=None) -> DataFrame():
-    '''Function to locate a biological target within the Chembl database,
+    '''
+    Function to locate a biological target within the Chembl database,
     returns a pandas dataframe with SMILES and associated PIC50 for single target binding assays.
     
     Parameters: 
@@ -18,6 +19,7 @@ def search_query(user_search:str=None, chembl_id_search:str=None, save_prefix=No
     Returns:
 
     'out_df' (pd.DataFrame): a pandas dataframe with column headers of canonical smiles, associated PIC50, and associated signle protein target.
+    
     '''
 
     target:chembl_webresource_client.query_set.QuerySet = new_client.target

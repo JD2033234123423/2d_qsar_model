@@ -24,9 +24,12 @@ class CompoundPredictor:
         Takes a standardized canonical smiles and returns an ECFP4 fingerprint.
 
         Parameters:
-            'smiles' (str): A string of a compound SMILES
+        
+        'smiles' (str): A string of a compound SMILES
+        
         Returns:
-            np.ndarray: Morgan fingerprint as a NumPy array
+        
+        np.ndarray: Morgan fingerprint as a NumPy array
         """
         molecule: rdkit.Chem.rdchem.Mol = Chem.rdmolfiles.MolFromSmiles(smiles)
         fp: rdkit.DataStructs.cDataStructs.ExplicitBitVect = rdMolDescriptors.GetMorganFingerprintAsBitVect(molecule, radius=2, nBits=2048)
@@ -37,7 +40,9 @@ class CompoundPredictor:
         """
         Takes an instance of the class CompoundPredictor and returns a tuple of datasets to use in training a regression model and testing a regression model.
         
-        Returns:n_estimators
+        Returns:
+        
+        n_estimators
         
         tuple of data for training, testing. 
         
@@ -154,13 +159,13 @@ class CompoundPredictor:
         elif self.prediction_method == 'xgboost':
             return self.xgboost_regression()
     @staticmethod
-    def predict_pIC50(model:any, novel_compound:pd.DataFrame) -> pd.DataFrame:
+    def predict_pIC50(model:object, novel_compound:pd.DataFrame) -> pd.DataFrame:
         """
         Predicts pIC50 values for compounds to a single target using a given model.
 
         Parameters:
         
-        'model' (any): The machine learning regression model used for prediction.
+        'model' (object): The machine learning regression model used for prediction.
         
         'novel_compound' (pd.DataFrame): DataFrame containing information about novel compounds.
 

@@ -22,10 +22,10 @@ def main() -> None:
 
     args = parser.parse_args()
     
-    def training(dataset, regression_method) -> any:
+    def training(dataset, regression_method) -> object:
         predictor = CompoundPredictor(dataset, regression_method, args.save_prefix)
     
-        def retrain_model() -> any:
+        def retrain_model() -> object:
             model, rmse, y_test, pred, r2 = predictor.predict()
             print(f"Root Mean Squared Error: {rmse}")
             retrain:str = ''
@@ -45,7 +45,7 @@ def main() -> None:
 
     
     if args.load_model is not None and args.training_file is not None:
-        model: any = load(args.load_model)
+        model: object = load(args.load_model)
         training_dataset: pd.DataFrame = pd.read_csv(args.training_file)
     
     elif args.load_model is not None and args.training_file is None:
@@ -59,7 +59,7 @@ def main() -> None:
         else:
             training_dataset: pd.DataFrame = pd.read_csv(args.training_file)
 
-        model: any = training(training_dataset, args.regression_method)
+        model: object = training(training_dataset, args.regression_method)
 
     def make_prediction() -> None:
         predict: str = input(f'\nWould you like to predict the PIC50 of novel compounds to {training_dataset["target_pref_name"][0]} (y/n)?: ')

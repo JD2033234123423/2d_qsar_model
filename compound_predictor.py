@@ -145,8 +145,8 @@ class CompoundPredictor:
         print(f'\nBuilding model for {self.target_name}\n')
         xgb_r.fit(self.x_train, self.y_train)
         y_pred:np.ndarray = xgb_r.predict(self.x_test)
-        rmse:np.ndarray = np.sqrt(mean_squared_error(self.y_test, pred))
-        r2:float = r2_score(self.y_test, pred)
+        rmse:np.ndarray = np.sqrt(mean_squared_error(self.y_test, y_pred))
+        r2:float = r2_score(self.y_test, y_pred)
         return xgb_r, rmse, self.y_test, y_pred,  r2
         
     def predict(self) -> tuple:

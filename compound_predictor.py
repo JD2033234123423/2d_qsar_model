@@ -115,8 +115,10 @@ class CompoundPredictor:
         Builds and trains a Random Forest regression model and returns relevant information.
 
         Returns:
+        
         tuple[RandomForestRegressor, np.ndarray, pd.Series, np.ndarray, float]: A tuple containing the trained model,
         root mean squared error (rmse), true target values (y_test), predicted target values (y_pred), and R-squared (r2).
+        
         """
         reg = RandomForestRegressor(n_estimators=300)
         self.data_preprocessing()
@@ -135,6 +137,7 @@ class CompoundPredictor:
         
         tuple[xgb.XGBRegressor, np.ndarray, pd.Series, np.ndarray, float]: A tuple containing the trained XGBoost model,
         root mean squared error (rmse), true target values (y_test), predicted target values (y_pred), and R-squared (r2).
+        
         """
         
         xgb_r = xgb.XGBRegressor(objective = 'reg:squarederror', n_estimators = 300)
@@ -153,6 +156,7 @@ class CompoundPredictor:
         Returns:
         
         tuple: A tuple containing the relevant information based on the chosen prediction method.
+        
         """
         if self.prediction_method == 'random forest':
             return self.rfmodel()
@@ -171,6 +175,7 @@ class CompoundPredictor:
 
         Returns:
         pd.DataFrame: A DataFrame containing the predicted pIC50 values.
+        
         """
         x_pred: np.ndarray = np.vstack([CompoundPredictor.generate_fingerprint(smiles) for smiles in novel_compound['canonical_smiles']])
         pred_pic50:np.ndarray = model.predict(x_pred)

@@ -10,4 +10,4 @@ $ conda env create -f 2d_qsar_model/environment.yml
 
 The programme can be executed using Python 3 by typing:
 
-Python 2d_qsar_model [optional arguments]
+Python 2d_qsar_model [optional arguments] (see -h for description of optional arguments)

@@ -27,7 +27,7 @@ def main() -> None:
     
         def retrain_model() -> object:
             model, rmse, y_test, pred, r2 = predictor.predict()
-            print(f"Root Mean Squared Error: {rmse}")
+            print(f"Root Mean Squared Error: {rmse}\nR^2: {r2}")
             retrain:str = ''
             while retrain.lower() != 'y' and retrain.lower() != 'n':
                 retrain = input("\nWould you like to use this model, type n to retrain (y/n): ")

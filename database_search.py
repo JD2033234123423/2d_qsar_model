@@ -10,9 +10,14 @@ def search_query(user_search:str=None, chembl_id_search:str=None, save_prefix=No
     returns a pandas dataframe with SMILES and associated PIC50 for single target binding assays.
     
     Parameters: 
-        'user_search' (str): a string of a biological target.
+    
+    'user_search' (str): a string of a biological target.
         
-        'chembl_id_search' (str): a string of a Chembl ID for a SINGLE PROTEIN target.
+    'chembl_id_search' (str): a string of a Chembl ID for a SINGLE PROTEIN target.
+
+    Returns:
+
+    'out_df' (pd.DataFrame): a pandas dataframe with column headers of canonical smiles, associated PIC50, and associated signle protein target.
     '''
 
     target:chembl_webresource_client.query_set.QuerySet = new_client.target

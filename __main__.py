@@ -12,13 +12,13 @@ def main() -> None:
     
     parser = argparse.ArgumentParser()
     # Optional arguments to running
-    parser.add_argument("-t", "--target_name", metavar='', help='(str): Takes a name of a SINGLE PROTEIN target ', type=str)
-    parser.add_argument('-c', '--chembl_id', metavar= '', help='(str): Takes a chembl id of a SINGLE PROTEIN target', type=str)
-    parser.add_argument('-r', '--regression_method', metavar= '', help='(str): Choice of regression model for 2D training, can be either random forest or xgboost', type=str, choices=['random forest', 'xgboost'], default='random forest')
+    parser.add_argument("-t", "--target_name", metavar='', help='(str): Takes a name of a SINGLE PROTEIN target.', type=str)
+    parser.add_argument('-c', '--chembl_id', metavar= '', help='(str): Takes a chembl id of a SINGLE PROTEIN target.', type=str)
+    parser.add_argument('-r', '--regression_method', metavar= '', help='(str): Choice of regression model for 2D training, can be either random forest or xgboost.', type=str, choices=['random forest', 'xgboost'], default='random forest')
     parser.add_argument('-f', '--training_file', metavar= '', help="""(str): Takes a location of a csv file used for training dataset, csv must have the headers:
-'canonical_smiles' ,'pchembl_value, and, 'target_pref_name' """, type=str)
-    parser.add_argument('-s', '--save_prefix', metavar= '', help='(str): Takes a string of what you want your files named', type=str)
-    parser.add_argument('-l', '--load_model', metavar= '', help='(str): Takes a string of the location of your model you want parsing for predicting PIC50 values, requires a training dataset to be loaded', type=str)
+'canonical_smiles' ,'pchembl_value, and, 'target_pref_name'. """, type=str)
+    parser.add_argument('-s', '--save_prefix', metavar= '', help='(str): Takes a string of what you want your files named.', type=str)
+    parser.add_argument('-l', '--load_model', metavar= '', help='(str): Takes a string of the location of your model you want parsing for predicting PIC50 values, requires a training dataset to be loaded.', type=str)
 
     args = parser.parse_args()
     

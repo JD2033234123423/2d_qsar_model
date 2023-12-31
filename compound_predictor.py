@@ -24,7 +24,7 @@ class CompoundPredictor:
         Takes a standardized canonical smiles and returns an ECFP4 fingerprint.
 
         Parameters:
-            smiles (str): A string of a compound SMILES
+            'smiles' (str): A string of a compound SMILES
         Returns:
             np.ndarray: Morgan fingerprint as a NumPy array
         """

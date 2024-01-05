@@ -8,6 +8,8 @@ Then create the conda environment with:
 
 $ conda env create -f 2d_qsar_model/environment.yml.
 
+# Requries a stable internet connection
+
 The programme can be executed using Python 3 by typing:
 
 Python 2d_qsar_model [optional arguments] (see -h for description of optional arguments)

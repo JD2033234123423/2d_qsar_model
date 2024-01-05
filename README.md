@@ -1,4 +1,5 @@
 # 2d_qsar_PIC50
+# Requries a stable internet connection
 simple 2d QSAR for predicting compound PIC50.
 
 To install enter:
@@ -8,7 +9,9 @@ Then create the conda environment with:
 
 $ conda env create -f 2d_qsar_model/environment.yml.
 
-# Requries a stable internet connection
+Then activate the conda environment with:
+
+$ conda activate qsar_2d
 
 The programme can be executed using Python 3 by typing:
 
